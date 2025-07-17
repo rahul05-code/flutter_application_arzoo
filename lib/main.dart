@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_arzoo/cart_page.dart';
 import 'package:flutter_application_arzoo/dashboard_page.dart';
 import 'login_page.dart';
 
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: DashboardPage(),
+      //home: DashboardPage(),
+      home: CartPage(),
     );
   }
 }

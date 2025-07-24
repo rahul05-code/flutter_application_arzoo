@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'models/product.dart';
 
+// ignore: must_be_immutable
 class CartPage extends StatelessWidget {
   CartPage({super.key});
   List<Product> products = [
@@ -10,7 +11,7 @@ class CartPage extends StatelessWidget {
       price: 999.99,
       description:
           "Latest iPhone with titanium design, A17 Pro chip, and advanced camera system",
-      image: "https://example.com/images/iphone15pro.jpg",
+      image: "https://lottiefiles.com/free-animation/boxer-lottie-m8vJW89GX0",
     ),
     Product(
       productName: "Samsung Galaxy S24 Ultra",
@@ -110,7 +111,12 @@ class CartPage extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            Container(height: 100, width: 100, color: Colors.deepPurple),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.deepPurple,
+              child: Image.network(product.image, fit: BoxFit.fill),
+            ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,10 +140,14 @@ class CartPage extends StatelessWidget {
                 ],
               ),
             ),
-            Text("500", style: TextStyle(fontSize: 50)),
+            Text("${product.price}", style: TextStyle(fontSize: 50)),
           ],
         ),
       ),
     );
+  }
+
+  Widget cardItem(Product product) {
+    return Card();
   }
 }

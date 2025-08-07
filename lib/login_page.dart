@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_arzoo/cart_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -34,12 +35,13 @@ class _LoginPageState extends State<LoginPage> {
               Text('Password'),
               TextField(controller: pwdTxtCtr, obscureText: true),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   print(
                     "Button clicked " + userTxtCtr.text + " " + pwdTxtCtr.text,
                   );
                   if (userTxtCtr.text == pwdTxtCtr.text) {
                     msg = "Welcome " + userTxtCtr.text;
+                    SharedPreferences sp = await SharedPreferences.getInstance();
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => CartPage()),

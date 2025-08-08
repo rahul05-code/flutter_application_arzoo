@@ -23,6 +23,6 @@ class CounterController extends GetxController {
   void saveLimit() {
     limit.value = int.parse(limitTxtController.text);
     print(limitTxtController.text);
-    Get.to(CounterScreen());
+    Get.off(CounterScreen());
   }
 }

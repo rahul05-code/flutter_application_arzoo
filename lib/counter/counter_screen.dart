@@ -1,6 +1,7 @@
 //counter_screen.dart
 import 'package:flutter_application_arzoo/counter/counter_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_arzoo/counter/settings_screen.dart';
 import 'package:get/get.dart';
 
 class CounterScreen extends StatelessWidget {
@@ -8,7 +9,17 @@ class CounterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Counter App')),
+      appBar: AppBar(
+        title: Text('Counter App'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.off(SettingsScreen());
+            },
+            icon: Icon(Icons.settings),
+          ),
+        ],
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
